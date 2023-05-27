@@ -3,11 +3,14 @@
     import {Link} from "svelte-routing";
 
     let cartItems;
+    let totalCartPrice = 0;
+
     cartStore.subscribe(value => {
         cartItems = value;
+        totalCartPrice = cartItems.map(item => item.price)
+            .reduce((prev, next) => prev + next, 0);
     });
 
-    let totalCartPrice = 0;
     cartItems.forEach(item => {
         totalCartPrice += item.price;
     });
