@@ -1,6 +1,7 @@
 <script>
-    import { cartStore } from './store/stores.js';
+    import {cartStore} from './store/stores.js';
     import Navbar from "./nav/Navbar.svelte";
+    import {Link} from "svelte-routing";
 
     let cartItems;
     cartStore.subscribe(value => {
@@ -23,6 +24,9 @@
 <div>
     <h1>Shopping cart</h1>
     <h2>Total price: {totalCartPrice}</h2>
+    <Link to="/checkout">
+        <button>Pay and checkout</button>
+    </Link>
 
     <button on:click={clearCart}>Clear cart</button>
     {#each cartItems as item}

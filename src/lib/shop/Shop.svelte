@@ -3,14 +3,19 @@
     import ProductList from "./ProductList.svelte";
     import ShoppingCart from "./ShoppingCart.svelte";
     import Navbar from "./nav/Navbar.svelte";
+    import Checkout from "./Checkout.svelte";
 
     export let url = "/";
 </script>
 
 <main>
     <Router base="/">
-        <Navbar/>
+        <nav>
+            <Link to="/">Product List</Link>
+            <Link to="/cart">Shopping Cart</Link>
+        </nav>
         <Route path="/" component={ProductList}/>
         <Route path="/cart" component={ShoppingCart}/>
+        <Route path="/checkout" component={Checkout}/>
     </Router>
 </main>
