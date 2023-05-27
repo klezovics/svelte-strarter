@@ -1,5 +1,5 @@
 <script>
-    import {counterStore} from './store.js';
+    import {storeProxy}  from "./StoreProxy.js";
     import CounterSummary from "./CounterSummary.svelte";
 
     const sum = (arr) => {
@@ -17,7 +17,7 @@
     let counters = [];
     let totalCount = 0;
 
-    counterStore.subscribe(value => {
+    storeProxy.subscribe(value => {
             counters = value;
             console.log('Counters:', counters);
             let values = counters.map((counter) => (counter.count));
