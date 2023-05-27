@@ -1,9 +1,11 @@
 <script>
     import Counters from "./Counters.svelte";
     import CounterSummary from "./CounterSummary.svelte";
+    import CounterSummaryContainer from "./CounterSummaryContainer.svelte";
+    import CountersContainer from "./CountersContainer.svelte";
 </script>
 
 <div>
-    <CounterSummary/>
-    <Counters />
+    <CounterSummaryContainer/>
+    <CountersContainer/>
 </div>
