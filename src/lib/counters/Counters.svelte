@@ -1,6 +1,6 @@
 <script>
-    import { counterStore } from './store.js';
-    import { v4 } from 'node-uuid';
+    import {counterStore} from './store.js';
+    import {v4} from 'node-uuid';
 
     let counters = [];
     counterStore.subscribe(value => {
@@ -9,12 +9,8 @@
 
     function addCounter() {
         counterStore.update(value => {
-            return [...value, { id: v4(), value: 0 }];
+            return [...value, {id: v4(), count: 0}];
         });
-    }
-
-    function removeCounter(id) {
-        counters = counters.filter(counter => counter.id !== id);
     }
 
     function clearCounters() {
@@ -24,10 +20,10 @@
     }
 
     function incrementCounter(id) {
-        counterStore.update(value => {
-            return value.map(counter => {
+        counterStore.update(counters => {
+            return counters.map(counter => {
                 if (counter.id === id) {
-                    return { ...counter, value: counter.value + 1 };
+                    return {...counter, count: counter.count + 1};
                 }
                 return counter;
             });
@@ -38,7 +34,7 @@
         counterStore.update(value => {
             return value.map(counter => {
                 if (counter.id === id) {
-                    return { ...counter, value: counter.value - 1 };
+                    return {...counter, count: counter.count - 1};
                 }
                 return counter;
             });
@@ -51,7 +47,7 @@
     <ul>
         {#each counters as counter}
             <li>
-                <span>{counter.value}</span>
+                <span>{counter.count}</span>
                 <button on:click={() => incrementCounter(counter.id)}>+</button>
                 <button on:click={() => decrementCounter(counter.id)}>-</button>
             </li>
