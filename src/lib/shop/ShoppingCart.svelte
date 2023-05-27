@@ -7,8 +7,10 @@
 
     cartStore.subscribe(value => {
         cartItems = value;
-        totalCartPrice = cartItems.map(item => item.price)
-            .reduce((prev, next) => prev + next, 0);
+
+        let sum=0;
+        cartItems.forEach(item => {sum += item.price;});
+        totalCartPrice = sum;
     });
 
     cartItems.forEach(item => {

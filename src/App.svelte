@@ -5,6 +5,7 @@
   import MyComponent from "./lib/MyComponent.svelte";
   import ProductList from "./lib/shop/ProductList.svelte";
   import Shop from "./lib/shop/Shop.svelte";
+  import Counters from "./lib/counters/Counters.svelte";
 </script>
 
 <div>
@@ -17,7 +18,8 @@
 <!--    </a>-->
 <!--  </div>-->
 <!--  <h1>Vite + Svelte</h1>-->
-<Shop />
+<!--<Shop />-->
+<Counters />
 <!--  <div class="card">-->
 <!--&lt;!&ndash;    <Counter />&ndash;&gt;-->
 <!--&lt;!&ndash;    <MyComponent message="WINNING !"/>&ndash;&gt;-->
