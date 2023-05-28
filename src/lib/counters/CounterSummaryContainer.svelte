@@ -1,28 +1,15 @@
 <script>
     import {storeProxy}  from "./StoreProxy.js";
     import CounterSummary from "./CounterSummary.svelte";
-
-    const sum = (arr) => {
-        let sum = 0;
-
-        if (arr) {
-            arr.forEach((item) => {
-                sum += item;
-            });
-        }
-
-        return sum;
-    }
+    import _ from 'lodash';
 
     let counters = [];
     let totalCount = 0;
 
     storeProxy.subscribe(value => {
             counters = value;
-            console.log('Counters:', counters);
-            let values = counters.map((counter) => (counter.count));
-            console.log('Values:', values)
-            totalCount = sum(values);
+            let values = counters.map(counter => counter.count);
+            totalCount = _.sum(values);
         }
     );
 </script>
