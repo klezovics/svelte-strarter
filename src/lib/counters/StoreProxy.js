@@ -1,7 +1,6 @@
 import {counterStore} from "./store.js";
 import {v4} from "node-uuid";
 
-export const storeProxy = new StoreProxy(counterStore);
 export class StoreProxy {
     constructor(store) {
         this.counterStore = store;
@@ -49,3 +48,5 @@ export class StoreProxy {
         });
     }
 }
+
+export const storeProxy = new StoreProxy(counterStore);

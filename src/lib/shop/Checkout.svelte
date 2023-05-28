@@ -1,6 +1,5 @@
 <script>
     import { cartStore } from './store/stores.js';
-    import Navbar from "./nav/Navbar.svelte";
 
     let cartItems;
     cartStore.subscribe(value => {

@@ -2,7 +2,6 @@
     import {Router, Link, Route} from 'svelte-routing';
     import ProductList from "./ProductList.svelte";
     import ShoppingCart from "./ShoppingCart.svelte";
-    import Navbar from "./nav/Navbar.svelte";
     import Checkout from "./Checkout.svelte";
 
     export let url = "/";
