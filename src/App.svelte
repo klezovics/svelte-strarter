@@ -9,10 +9,11 @@
     import CounterApp from "./lib/counters/CounterApp.svelte";
     import StarWarsApp from "./lib/starwars/StarWarsApp.svelte";
     import TicTakToeApp from "./lib/tiktactoe/TicTakToeApp.svelte";
+    import TutorialApp from "./lib/tutorial/TutorialApp.svelte";
 </script>
 
 <div>
-    <TicTakToeApp/>
+    <TutorialApp/>
 </div>
 
 <style>
