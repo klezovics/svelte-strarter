@@ -25,13 +25,13 @@
             }
         }
 
-        //TODO Check columns for winner
+        // Check columns for winner
         for (let col = 0; col < 3; col++) {
             if (board[0][col] !== '' && board[0][col] === board[1][col] && board[1][col] === board[2][col]) {
                 winner = board[0][col];
             }
         }
-        //TODO Check diagonals for winner
+        // Check diagonals for winner
         if (board[0][0] !== '' && board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
             winner = board[0][0];
         }
